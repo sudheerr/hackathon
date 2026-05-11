@@ -1,0 +1,57 @@
+[
+  {
+    "rule_id": "rented_to_others",
+    "description": "Property is rented to others and requires rental exposure review.",
+    "field_path": "property.rented_to_others",
+    "operator": "equals",
+    "value": true,
+    "trigger_code": "RENTAL_EXPOSURE",
+    "severity": "HIGH",
+    "category": "occupancy",
+    "retrieval_queries": ["rental exposure rented to others underwriting requirements"]
+  },
+  {
+    "rule_id": "entity_ownership",
+    "description": "Applicant ownership type is an entity and requires ownership review.",
+    "field_path": "applicant.ownership_type",
+    "operator": "in",
+    "value": ["llc", "trust", "corporation"],
+    "trigger_code": "ENTITY_OWNERSHIP",
+    "severity": "MEDIUM",
+    "category": "ownership",
+    "retrieval_queries": ["entity ownership homeowners underwriting guidelines"]
+  },
+  {
+    "rule_id": "dwelling_limit_threshold",
+    "description": "Dwelling limit exceeds standard review threshold.",
+    "field_path": "coverage.dwelling_limit",
+    "operator": "greater_than_or_equal",
+    "value": 1000000,
+    "trigger_code": "DWELLING_LIMIT_THRESHOLD",
+    "severity": "MEDIUM",
+    "category": "coverage",
+    "retrieval_queries": ["dwelling limit threshold high coverage review"]
+  },
+  {
+    "rule_id": "coastal_exposure",
+    "description": "Property is within coastal exposure distance.",
+    "field_path": "property.distance_to_coast_miles",
+    "operator": "less_than_or_equal",
+    "value": 5,
+    "trigger_code": "COASTAL_EXPOSURE",
+    "severity": "HIGH",
+    "category": "catastrophe",
+    "retrieval_queries": ["coastal exposure distance to coast underwriting requirements"]
+  },
+  {
+    "rule_id": "prior_claims_count",
+    "description": "Prior claims count requires additional review.",
+    "field_path": "claims_history.prior_claim_count",
+    "operator": "greater_than_or_equal",
+    "value": 2,
+    "trigger_code": "PRIOR_CLAIMS_COUNT",
+    "severity": "MEDIUM",
+    "category": "claims",
+    "retrieval_queries": ["prior claims count underwriting review requirements"]
+  }
+]

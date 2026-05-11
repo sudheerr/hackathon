@@ -1,0 +1,32 @@
+{
+  "policy_id": "POC-HOME-001",
+  "effective_date": "2026-06-01",
+  "applicant": {
+    "applicant_id": "APP-001",
+    "first_name": "Jordan",
+    "last_name": "Taylor",
+    "email": "agent@example.com",
+    "ownership_type": "llc"
+  },
+  "coverage": {
+    "dwelling_limit": 1250000,
+    "personal_property_limit": 500000,
+    "liability_limit": 500000,
+    "deductible": 5000
+  },
+  "property": {
+    "address_line1": "100 Ocean View Ave",
+    "city": "Naples",
+    "state": "FL",
+    "postal_code": "34102",
+    "year_built": 2018,
+    "distance_to_coast_miles": 2.5,
+    "rented_to_others": true,
+    "occupancy_type": "secondary"
+  },
+  "claims_history": {
+    "prior_claim_count": 2,
+    "prior_claims_total_amount": 35000,
+    "lookback_years": 5
+  }
+}
